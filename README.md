@@ -5,9 +5,13 @@ Proyek ini adalah aplikasi REST API sederhana menggunakan Flask dan PostgreSQL u
 Aplikasi ini memiliki 4 endpoint utama: GET, POST, DETAIL (GET by NIM), dan DELETE.
 
 📚 Fitur Utama
+
 ✅ Menampilkan semua data mahasiswa
+
 ➕ Menambahkan data mahasiswa baru
+
 🔍 Melihat detail mahasiswa berdasarkan NIM
+
 ❌ Menghapus data mahasiswa berdasarkan NIM
 
 Gunakan "python app.py" untuk menjalankan aplikasi
