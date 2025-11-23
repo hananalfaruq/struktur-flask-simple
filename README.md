@@ -1,37 +1,95 @@
-# 🎓 Flask PostgreSQL CRUD – Mahasiswa App
+# 🧑‍💻 Aplikasi CRUD Flask - Sistem Data Kampus
 
-Aplikasi **REST API sederhana** menggunakan **Flask** dan **PostgreSQL** untuk mengelola data mahasiswa.  
-Aplikasi ini memiliki 4 endpoint utama: **GET**, **POST**, **DETAIL (GET by NIM)**, dan **DELETE**.
-
----
-
-## 📚 Fitur Utama
-
-- ✅ Menampilkan semua data mahasiswa  
-- ➕ Menambahkan data mahasiswa baru  
-- 🔍 Melihat detail mahasiswa berdasarkan NIM  
-- ❌ Menghapus data mahasiswa berdasarkan NIM  
+Proyek ini adalah aplikasi web berbasis **Python Flask** yang terhubung ke **PostgreSQL**.  
+Aplikasi ini menyediakan fitur CRUD (Create, Read, Update, Delete) untuk mengelola data:
+- Mahasiswa  
+- Mata Kuliah  
+- Kelas  
+- Relasi Mahasiswa dan Kelas
 
 ---
 
-## 🗃️ Struktur Database
-
-**Nama Database:** `kampus`  
-**Tabel:** `mahasiswa`
-
-| Kolom          | Tipe Data    | Keterangan |
-|----------------|--------------|-------------|
-| nim            | VARCHAR(20)  | Primary Key |
-| nama           | VARCHAR(100) | Nama mahasiswa |
-| tahun_masuk    | INT          | Tahun pertama kuliah |
-| alamat         | TEXT         | Alamat rumah |
-| tanggal_lahir  | DATE         | Format: YYYY-MM-DD |
+## 🚀 Fitur Utama
+- Tambah, lihat, dan hapus data mahasiswa  
+- Tambah, lihat, dan hapus data mata kuliah  
+- Tambah, lihat, dan hapus data kelas  
+- Relasi mahasiswa dengan kelas (many-to-many)  
+- Interface sederhana berbasis HTML
 
 ---
 
-## ⚙️ Instalasi dan Menjalankan Aplikasi
+## 🗂️ Struktur Folder
+```
+flask_crud/
+│
+├── app.py
+├── templates/
+│   ├── index.html
+│   ├── mahasiswa.html
+│   ├── matakuliah.html
+│   ├── kelas.html
+│   └── mahasiswa_kelas.html
+└── requirements.txt
+```
 
-### 1️⃣ Clone repository
+---
+
+## ⚙️ Instalasi dan Konfigurasi
+
+### 1. Clone Repository
 ```bash
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
+git clone https://github.com/username/flask-crud-kampus.git
+cd flask-crud-kampus
+```
+
+### 2. Buat Virtual Environment (Opsional)
+```bash
+python -m venv venv
+source venv/bin/activate  # (Linux/Mac)
+venv\Scripts\activate   # (Windows)
+```
+
+### 3. Install Dependensi
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Buat Database di PostgreSQL
+Buat database baru bernama `kampus`:
+```sql
+CREATE DATABASE kampus;
+```
+
+### 5. Jalankan Script SQL
+Gunakan SQL berikut untuk membuat tabel:
+```sql
+-- Jalankan script pembuatan tabel dan data awal
+-- (gunakan file .sql yang telah kamu buat)
+```
+
+### 6. Jalankan Aplikasi Flask
+```bash
+python app.py
+```
+
+Lalu buka browser dan akses:
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 🧩 Teknologi yang Digunakan
+- **Python 3.x**
+- **Flask**
+- **PostgreSQL**
+- **psycopg2**
+- **HTML + Jinja2**
+
+---
+
+## 🧑‍🏫 Kontributor
+- **Nama:** Hanan Ahmad Alfaruqi  
+- **NIM:** 23260015  
+- **Institusi:** Unusia  
+- **Dosen Pembimbing:** —  
