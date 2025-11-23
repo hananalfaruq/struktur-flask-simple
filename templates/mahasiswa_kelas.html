@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relasi Mahasiswa - Kelas</title>
+</head>
+<body>
+    <h2>Relasi Mahasiswa - Kelas</h2>
+    <a href="/">← Kembali ke Menu</a>
+
+    <h3>Tambah Relasi</h3>
+    <form method="POST" action="/tambah_mahasiswa_kelas">
+        <input type="number" name="id_mahasiswa" placeholder="ID Mahasiswa" required><br>
+        <input type="number" name="id_kelas" placeholder="ID Kelas" required><br>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <h3>Daftar Mahasiswa di Setiap Kelas</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID Relasi</th><th>Nama Mahasiswa</th><th>Nama Kelas</th><th>Tahun Ajaran</th><th>Aksi</th>
+        </tr>
+        {% for mk in mahasiswa_kelas %}
+        <tr>
+            <td>{{ mk[0] }}</td>
+            <td>{{ mk[1] }}</td>
+            <td>{{ mk[2] }}</td>
+            <td>{{ mk[3] }}</td>
+            <td><a href="/hapus_mahasiswa_kelas/{{ mk[0] }}" onclick="return confirm('Hapus relasi ini?')">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

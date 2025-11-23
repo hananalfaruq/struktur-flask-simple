@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa</title>
+</head>
+<body>
+    <h2>Data Mahasiswa</h2>
+    <a href="/">← Kembali ke Menu</a>
+
+    <h3>Tambah Mahasiswa</h3>
+    <form method="POST" action="/tambah_mahasiswa">
+        <input type="number" name="nim" placeholder="NIM (8 digit)" required><br>
+        <input type="text" name="nama" placeholder="Nama" required><br>
+        <input type="date" name="tanggal_lahir" required><br>
+        <input type="text" name="alamat" placeholder="Alamat"><br>
+        <input type="number" name="tahun_masuk" placeholder="Tahun Masuk" required><br>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <h3>Daftar Mahasiswa</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th><th>NIM</th><th>Nama</th><th>Tanggal Lahir</th><th>Alamat</th><th>Tahun Masuk</th><th>Aksi</th>
+        </tr>
+        {% for m in mahasiswa %}
+        <tr>
+            <td>{{ m[0] }}</td>
+            <td>{{ m[1] }}</td>
+            <td>{{ m[2] }}</td>
+            <td>{{ m[3] }}</td>
+            <td>{{ m[4] }}</td>
+            <td>{{ m[5] }}</td>
+            <td><a href="/hapus_mahasiswa/{{ m[0] }}" onclick="return confirm('Hapus mahasiswa ini?')">Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
